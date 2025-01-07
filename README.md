@@ -18,8 +18,8 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
  
   - Gen 1
 
-[Gen1](Biblia/nube_de_palabras/AT/gen/Gen1_azul.png)
+  ![Gen1](Biblia/nube_de_palabras/AT/gen/Gen1_azul.png)
 
   - Gen 2
 
-[Gen2](Biblia/nube_de_palabras/AT/gen/Gen2_azul.png)
+  ![Gen2](Biblia/nube_de_palabras/AT/gen/Gen2_azul.png)
