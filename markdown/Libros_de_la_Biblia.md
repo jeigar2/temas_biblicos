@@ -2,91 +2,90 @@
 
 [link](https://www.conferenciaepiscopal.es/biblia/)
 
-![png](https://img.plantuml.biz/plantuml/png/TLJDRjim3BxtAGpi5c03ahr0qxJhLYHfqFIqeHXecqq8oA8ZIy6wDzXZz9X3JxdrgXSRqrgIdMKtVHz9KVhuSzvOCBOYNLPGdmr-VBWre5Vua5rGhWZE1a8fMgtjoY3gXsoiBQqSP_SeWHLgo-9ovBCG6Yowuiqs-9bT-vt6XfeM-Z-_k0osAMxzYwNeE_Ul5HeElfVeh43D5Pt8DALSNBCrDTRlZLmImcwuSNuNWCC2W-NEsVOqp9PGELGj7FNXCBl3fnWrwg5XDZ5-hwc0P3zchfhI-EU0vhZ6ohz4wptd7NJZIh8nJluRyyoWW1mvfUaI9xLee2RK1O729dlAQlOxsnCcRqzBK5Ma5uQtQ7AAn5KXyGIYwovG4v2ocgp4J4cUuWr5IPQGK-cCVAftWIWGQdlojRNXn_u3lpNGLGPDJxVfMyz1GQnZwWimhWXPV-F6KIpY9UW4RXjCztAanvNV1tgSbztah5C5PxHnANuEQ_-gM_0LSYZY4vRyA77fbl4AGsz_b-APZca62ZQk9LfzSkLa-kOEj_yPidU7g-rXJ5Kgs4mcZkFP946dhkWq6iH7Ox6M0hJLX5f4iAom-IVJX4tjf5BW5EcGuOuhqDoP1pOacw7JgCVCjNzMODDuF4ftHECNKbIZRc9D9oolwXB3WnYWM4QiIuzEq-9D5IT1HaVudYodrD9X-oHBRlhZrQeWMn8ENI-BHdN6V2bZGB3Yc7Y1fKbf8pfrcMWluTsY78wVWdduyNEaozHEDHSWQXtMwJdAsdvVtNy1)
+![png](https://img.plantuml.biz/plantuml/png/TLNBKjim5Dtp5Pxf1bZLUL3OaQOfb27015RjC9rh-v9eHfQCB6LA_w2VmJ8BLjcnzO_rIevbsKoMFZxtwEhSXyvB3KhdJ6Gv50V7lpxTAX1BV8o-ieGpE3WcYBFbIYyLedYC9aApfP7H0r9WZa9BelGuTmI3HfEwVyU_eujg8x1aPNGu_doqmwf_VsGceyEHHwvnNRrfbX8u-DA0DzLxZafIwF2amRwXqOG9cJFY3aT77rEuPeaDMh5ILrj5ckKkzagMfjhG2QD6xSfWYgG_Y1jaOJJbrNp5qJta1ZcTv1a3Zmq2tW9VdD2WfJNGk6LDLRKLB0KBdxNC06vlEYipLRqI57kNRd25UVLcUV6m0HzaieE2QsMChX47McHQg1H7SqWXGMjkInk4w7Y_jIKK34NAWDC5Nw92LXlTyJaX3xqJzy3pMj4VVwVa6bN2N6szixEKz1XGsJQMxWMcG3sbeWmZJW6f-xBEdhOd92mpYcoWiBEk75bOzzKutd-XGicdxXr-b52xUkBTkKBLk3_skSt-uhDXjXj6FftR4dlra8xGV4xoQal_VQAJ9BEodYnSsJrzpfwD4sm70rRLko3h6k0I4aXD6Y3tyebqNB8UcopHpbVp-PDghVgjCmSEpoO8tFcLS4EBuSRWUi_yruJPscuGphoFSre6zj3JzW2LThlksjG34RGlY70cBp5TKSYk_b2GUrfoDrkdHnzIc4fL62ef6Cv4iuKMCWVHFJQsJ4OhhJy38UozkwXUEMZN4BxqJzHUCaI-CyuA52M6vPjAoheFnjP4u9AcVlTht2RG_pKCebWkdQ51lXxpwWzCoo2CqgB6tGflPw8mk5tNFNeHm0uPxKvkLv8VCR84bZ98DAPbdodPINs7x1Uc8fAKAx6NgUiTgDI0h_-m3z1-Srth6xkGAP3rxfcnA_WSwKshtxN_)
 
 ```plantuml
 @startmindmap
 *[#Orange] Biblia
 **[#lightgreen] Antiguo Testamento
 ***[#lightgreen] Pentateuco
-****_ Génesis
-****_ Éxodo
-****_ Levítico
-****_ Números
-****_ Deuteronomio
+****_ Génesis (50)
+****_ Éxodo (40)
+****_ Levítico (27)
+****_ Números (36)
+****_ Deuteronomio (34)
 ***[#lightgreen] Libros históricos
-****_ Josué
-****_ Jueces
-****_ Rut
-****_ 1 Samuel
-****_ 2 Samuel
-****_ 1 Reyes
-****_ 2 Reyes
-****_ 1 Crónicas
-****_ 2 Crónicas
-****_ Esdrás
-****_ Nehemías
-****_ Tobías
-****_ Judit
-****_ Ester
-****_ 1 Macabeos
-****_ 2 Macabeos
+****_ Josué (24)
+****_ Jueces (21)
+****_ Rut (4)
+****_ 1 Samuel (31)
+****_ 2 Samuel (24)
+****_ 1 Reyes (22)
+****_ 2 Reyes (25)
+****_ 1 Crónicas (29)
+****_ 2 Crónicas (36)
+****_ Esdrás (10)
+****_ Nehemías (13)
+****_ Tobías (14)
+****_ Judit (16)
+****_ Ester (10)
+****_ 1 Macabeos (16)
+****_ 2 Macabeos (15)
 ***[#lightgreen] Libros sapienciales y poéticos
-****_ Job
-****_ Salmos
-****_ Proverbios
-****_ Eclesiastés
-****_ Cantar de los cantares
-****_ Sabiduría
-****_ Eclesiástico
+****_ Job (42)
+****_ Salmos (150)
+****_ Proverbios (31)
+****_ Eclesiastés (12)
+****_ Cantar de los cantares (8)
+****_ Sabiduría (19)
+****_ Eclesiástico (51)
 ***[#lightgreen] Libros proféticos
-****_ Isaías
-****_ Jeremías
-****_ Lamentaciones
-****_ Baruc
-****_ Ezequiel
-****_ Daniel
-****_ Oseas
-****_ Joel
-****_ Amós
+****_ Isaías (66)
+****_ Jeremías (52)
+****_ Ezequiel (48)
+****_ Oseas (14)
+****_ Joel (4)
+****_ Amós (9)
 ****_ Abdías
-****_ Jonás
-****_ Miqueas
-****_ Nahún
-****_ Habacuc
-****_ Sofonías
-****_ Ageo
-****_ Zacarías
-****_ Malaquías
+****_ Jonás (4)
+****_ Miqueas (7)
+****_ Nahún (3)
+****_ Habacuc (3)
+****_ Sofonías (3)
+****_ Ageo (2)
+****_ Zacarías (14)
+****_ Malaquías (3)
 **[#lightblue] Nuevo Testamento
 ***[#lightblue] Evangelios
-****_ Mateo
-****_ Marcos
-****_ Lucas
-****_ Juan
-****_ Hechos de los apóstoles
+****_ Mateo (28)
+****_ Marcos (16)
+****_ Lucas (24)
+****_ Juan (21)
+****_ Hechos de los apóstoles (28)
 ***[#lightblue] Corpus paulino
-****_ Romanos
-****_ 1 Corintios
-****_ 2 Corintios
-****_ Gálatas
-****_ Efesios
-****_ Filipenses
-****_ Colosenses
-****_ 1 Tesalonicenses
-****_ 2 Tesalonicenses
-****_ 1 Timoteo
-****_ 2 Timoteo
-****_ Tito
+****_ Romanos (16)
+****_ 1 Corintios (16)
+****_ 2 Corintios (13)
+****_ Gálatas (6)
+****_ Efesios (6)
+****_ Filipenses (4)
+****_ Colosenses (4)
+****_ 1 Tesalonicenses (5)
+****_ 2 Tesalonicenses (3)
+****_ 1 Timoteo (6)
+****_ 2 Timoteo (4)
+****_ Tito (3)
 ****_ Filemón
-****_ Hebreos
+****_ Hebreos (13)
 ***[#lightblue] Cartas católicas
-****_ Santiago
-****_ 1 Pedro
-****_ 2 Pedro
+****_ Santiago (5)
+****_ 1 Pedro (5)
+****_ 2 Pedro (3)
 ***[#lightblue] Cartas de San Juan
-****_ Juan. Cartas 1-3
-****_ Judas
-****_ Apocalipsis
+****_ 1 Juan (5)
+****_ 2 Juan (1)
+****_ 3 Juan (1)
+****_ Judas (1)
+****_ Apocalipsis (22)
 @endmindmap
 ```
