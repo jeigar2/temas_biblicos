@@ -12,4 +12,6 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 
 - Crear una nube de palabras con cada libro de la biblia, ayudado por esta herramiente [wordcloud](https://awario.com/es/wordcloud/)
 
-![Gen 1](Biblia/nube_de_palabras/Gen1.png)
+  - Gen 1
+
+![Gen 1](Biblia/nube_de_palabras/Gen1_azul.png)
