@@ -36,3 +36,7 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
   - Gen 2
 
   ![Gen2](Biblia/nube_de_palabras/AT/gen/Gen2_azul.png)
+
+  - **TODO**: Si ves el codigo fuente puedes guardar el SVG donde generar el mapa de palabras y se puede guardar en un fichero con extensión SVG
+  
+  ![Gen8](Biblia/nube_de_palabras/AT/gen/Gen8.svg)
