@@ -74,6 +74,9 @@ def generar_nube_palabras(texto, directorio, nombre_sin_extension, color=None):
     img.save(png_bytes, format='PNG')
     png_bytes.seek(0)
     
+    if not os.path.exists(directorio):
+        os.makedirs(directorio)
+
     ruta_completa = os.path.join(directorio, nombre_fichero)
 
     # Escribir el resultado en un archivo PNG
@@ -94,6 +97,9 @@ def generar_nube_palabras_svg(texto, directorio, nombre_sin_extension):
     svg_bytes = BytesIO()
     wc.to_svg(svg_bytes)
     svg_bytes.seek(0)
+
+    if not os.path.exists(directorio):
+        os.makedirs(directorio)
 
     ruta_completa = os.path.join(directorio, nombre_fichero.replace('.txt',''))
 
@@ -118,7 +124,8 @@ nt_biblioteca = set(open('Biblia/NT.txt', 'r').read().splitlines())
 
 # Directorio de entrada
 #directorio_entrada = sys.argv[1] # 'Biblia_crudo/'
-directorio_entrada = 'tmp/'
+#directorio_entrada = 'tmp/'
+directorio_entrada = 'Biblia_crudo/'
 
 
 # Expresión regular para filtrar archivos
