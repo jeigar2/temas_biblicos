@@ -25,17 +25,17 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 
 - Para generar la nube de palabras nos hemos ayudado de esta herramiente [wordcloud](https://awario.com/es/wordcloud/) al que se le pasa el resultado del fichero fase3_gen1.txt y al generar la nubes de palabras se descarga el fichero en color negro y azul, el nombre Gen1.png es negro y Gen1_azul.png es azul
 
-  - Gen [1](Biblia/texto_filtrado/AT/gen/Gn_1.txt), [2](Biblia/texto_filtrado/AT/gen/Gn_2.txt)
+  - Gen [1](Biblia/texto_filtrado/AT/Gn/Gn_1.txt), [2](Biblia/texto_filtrado/AT/Gn/Gn_2.txt)
   - Imagenes
 
   - Gen 1
 
-  ![Gen1](Biblia/nube_de_palabras/AT/gen/Gn_1_azul.png)
+  ![Gen1](Biblia/nube_de_palabras/AT/Gn/Gn_1_azul.png)
 
   - Gen 2
 
-  ![Gen2](Biblia/nube_de_palabras/AT/gen/Gn_2_azul.png)
+  ![Gen2](Biblia/nube_de_palabras/AT/Gn/Gn_2_azul.png)
 
   - **TODO**: Si ves el codigo fuente puedes guardar el SVG donde generar el mapa de palabras y se puede guardar en un fichero con extensión SVG
   
-  ![Gen8](Biblia/nube_de_palabras/AT/gen/Gn_8.svg)
+  ![Gen8](Biblia/nube_de_palabras/AT/Gn/Gn_8.svg)
