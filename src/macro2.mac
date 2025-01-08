@@ -1,0 +1,13 @@
+#!/bin/sh
+# Leer el nombre de archivo pasado como argumento
+NAME=$1
+URL=$2
+
+# Abrir la URL
+open $2
+
+# Esperar a que la página se cargue
+sleep 1
+
+# Imprimir la pantalla con el título especificado
+-print -title "$NAME"

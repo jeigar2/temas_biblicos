@@ -1,0 +1,21 @@
+#!/bin/sh
+# Leer el nombre de archivo pasado como argumento
+NAME=$1
+
+# Abrir la URL
+open https://www.vatican.va/archive/ESL0506/__PH.HTM
+
+# Imprimir la pantalla con el título especificado
+-print -title "$NAME"
+
+# Esperar a que la página se cargue
+sleep 2
+
+# Pulsar el enlace predeterminado
+-click 6
+
+# Esperar a que la impresión se complete
+sleep 1
+
+# Volver a pulsar el enlace predeterminado
+-click 2

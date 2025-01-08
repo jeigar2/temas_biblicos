@@ -1,8 +1,11 @@
 import os
+import sys
 
 ruta = 'Biblia_crudo/'
+argumento = sys.argv[1]
+
 for fichero in os.listdir(ruta):
-    if fichero.startswith('Gen') and fichero.endswith('.txt'):
+    if fichero.startswith(argumento) and fichero.endswith('.txt'):
         with open(os.path.join(ruta, fichero), 'r') as f:
             contenido = f.readlines()
         print(f"Archivo: {fichero}")
