@@ -22,20 +22,22 @@ for abrev in biblioteca_AT:
     for row in resumen_biblia:
         if row['Abrev'] == abrev:
             libro = row['Libro']
+            print(f"Escribiendo el libro {libro}...")
             total = row['Total']
             break
     listado += f"- [{libro} ({abrev} - {total})](../Biblia/{libro}.md)\n"
+    print(f"Terminando el libro {libro}...")
 
 # Agregar la sección Nuevo Testamento
 listado += "\n## Nuevo Testamento\n\n"
 for abrev in biblioteca_NT:
-    print(f"Escribiendo el libro {libro}...")
     for row in resumen_biblia:
         if row['Abrev'] == abrev:
             libro = row['Libro']
+            print(f"Escribiendo el libro {libro}...")
             total = row['Total']
             break
-    listado += f"- [{libro} ({abrev} - {total})](../Biblia/{abrev}.md)\n"
+    listado += f"- [{libro} ({abrev} - {total})](../Biblia/{libro}.md)\n"
     print(f"Terminando el libro {libro}...")
 
 # Escribir el listado en un archivo
