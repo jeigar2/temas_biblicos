@@ -62,6 +62,5 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
   - **TODO**: ~~Si ves el codigo fuente puedes guardar el SVG donde generar el mapa de palabras y se puede guardar en un fichero con extensión SVG~~
   - **TODO**: El SVG está comentado porque al generar el fichero no vuelca contenido se queda el fichero con 0 kb ya se revisará
   - **TODO**: Crear al igual que [Genesis](/Biblia/Genesis.md) una hoja con acceso a todos los nubes de palabras de cada capítulo de dicho libro, crear una hoja por libro.
-  - python3 src/ordenar_ficheros_Biblia.py
   
-  ![Gen8](Biblia/nube_de_palabras/AT/Gn/Gn_8.svg)
+  ~~![Gen8](Biblia/nube_de_palabras/AT/Gn/Gn_8.svg)~~
