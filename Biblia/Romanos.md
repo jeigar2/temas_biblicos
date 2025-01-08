@@ -1,0 +1,18 @@
+# Romanos
+
+1. Capítulo 1 [texto](texto_filtrado/NT/Rom/Rom_1.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_1.png)
+2. Capítulo 2 [texto](texto_filtrado/NT/Rom/Rom_2.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_2.png)
+3. Capítulo 3 [texto](texto_filtrado/NT/Rom/Rom_3.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_3.png)
+4. Capítulo 4 [texto](texto_filtrado/NT/Rom/Rom_4.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_4.png)
+5. Capítulo 5 [texto](texto_filtrado/NT/Rom/Rom_5.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_5.png)
+6. Capítulo 6 [texto](texto_filtrado/NT/Rom/Rom_6.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_6.png)
+7. Capítulo 7 [texto](texto_filtrado/NT/Rom/Rom_7.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_7.png)
+8. Capítulo 8 [texto](texto_filtrado/NT/Rom/Rom_8.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_8.png)
+9. Capítulo 9 [texto](texto_filtrado/NT/Rom/Rom_9.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_9.png)
+10. Capítulo 10 [texto](texto_filtrado/NT/Rom/Rom_10.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_10.png)
+11. Capítulo 11 [texto](texto_filtrado/NT/Rom/Rom_11.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_11.png)
+12. Capítulo 12 [texto](texto_filtrado/NT/Rom/Rom_12.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_12.png)
+13. Capítulo 13 [texto](texto_filtrado/NT/Rom/Rom_13.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_13.png)
+14. Capítulo 14 [texto](texto_filtrado/NT/Rom/Rom_14.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_14.png)
+15. Capítulo 15 [texto](texto_filtrado/NT/Rom/Rom_15.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_15.png)
+16. Capítulo 16 [texto](texto_filtrado/NT/Rom/Rom_16.txt), ![imagen](nube_de_palabras/NT/Rom/Rom_16.png)
