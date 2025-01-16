@@ -33,7 +33,7 @@ def obtener_versiculos():
                 'error': f'Libro no encontrado: {libro_ref}'
             }), 400
         
-        abrev, nombre_completo = libro_info
+        abrev, nombre_completo, testamento = libro_info
         
         # Validar capítulo
         capitulo = int(capitulo)
@@ -58,7 +58,8 @@ def obtener_versiculos():
             'referencia': {
                 'libro': {
                     'abreviatura': abrev,
-                    'nombre': nombre_completo
+                    'nombre': nombre_completo,
+                    'testamento': testamento
                 },
                 'capitulo': capitulo,
                 'versiculos': versiculos_rango
@@ -72,8 +73,12 @@ def obtener_versiculos():
 
 @app.route('/api/libros', methods=['GET'])
 def obtener_libros():
+    libros = biblia_info.obtener_todos_libros()
+    # Reemplazar guiones bajos por espacios en el campo 'Libro'
+    for libro in libros:
+        libro['Libro'] = libro['Libro'].replace('_', ' ')
     return jsonify({
-        'libros': biblia_info.obtener_todos_libros()
+        'libros': libros
     })
 
 if __name__ == '__main__':
