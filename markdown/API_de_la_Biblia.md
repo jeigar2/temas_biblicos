@@ -25,6 +25,15 @@ Press CTRL+C to quit
 127.0.0.1 - - [16/Jan/2025 12:16:16] "GET /api/libros HTTP/1.1" 200 -
 127.0.0.1 - - [16/Jan/2025 12:17:37] "GET /api/libros HTTP/1.1" 200 -
 127.0.0.1 - - [16/Jan/2025 12:17:37] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [16/Jan/2025 12:20:38] "GET /docs/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:20:38] "GET /docs/swagger-ui.css HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:20:38] "GET /docs/swagger-ui-bundle.js HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:20:38] "GET /docs/index.css HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:20:38] "GET /static/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:20:38] "GET /docs/favicon-32x32.png HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:20:51] "GET /static/swagger.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:22:03] "GET /api/libros HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jan/2025 12:22:23] "GET /api/versiculos?referencia=Gn%201,%201 HTTP/1.1" 200 -
 ```
 
 - La API de la Biblia, que permite:
@@ -158,3 +167,16 @@ Devuelve:
     {...}
 ]
 ```
+
+- añadir documentación con swagger
+
+```bash
+flask-swagger-ui==4.11.1
+```
+- acceso a la documentación
+
+http://localhost:5000/docs
+
+- acceso al archivo swagger.json
+
+http://localhost:5000/static/swagger.json
