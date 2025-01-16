@@ -2,9 +2,139 @@ from flask import Flask, request, jsonify
 import re
 from buscar_versiculos import buscar_versiculos
 from biblia_info import BibliaInfo
+from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
 biblia_info = BibliaInfo()
+
+# Configuración de Swagger UI
+SWAGGER_URL = '/docs'  # URL para acceder a UI
+API_URL = '/static/swagger.json'  # Nuestro archivo API spec
+
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "API de la Biblia"
+    }
+)
+
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+
+# Endpoint para servir el archivo swagger.json
+@app.route("/static/swagger.json")
+def specs():
+    return jsonify({
+        "openapi": "3.0.0",
+        "info": {
+            "title": "API de la Biblia",
+            "description": "API para consultar versículos y libros de la Biblia",
+            "version": "1.0.0",
+            "contact": {
+                "name": "API Biblia",
+                "url": "https://github.com/tuusuario/temas_biblicos"
+            }
+        },
+        "paths": {
+            "/api/versiculos": {
+                "get": {
+                    "tags": ["Versículos"],
+                    "summary": "Obtener versículos de la Biblia",
+                    "description": "Retorna versículos específicos de la Biblia según la referencia proporcionada",
+                    "parameters": [
+                        {
+                            "name": "referencia",
+                            "in": "query",
+                            "required": True,
+                            "schema": {
+                                "type": "string"
+                            },
+                            "description": "Referencia bíblica en formato: 'Libro Capítulo, Versículo(s)'\nEjemplos:\n- 'Gn 1, 1'\n- 'Sal 23'\n- '1 Co 1, 3-6'\n- 'Is 40, 3-'\n- 'Jn 1, -5'"
+                        }
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "Versículos encontrados",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "referencia": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "libro": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "abreviatura": {"type": "string"},
+                                                            "nombre": {"type": "string"},
+                                                            "testamento": {"type": "string", "enum": ["AT", "NT"]}
+                                                        }
+                                                    },
+                                                    "capitulo": {"type": "integer"},
+                                                    "versiculos": {"type": "string"}
+                                                }
+                                            },
+                                            "versiculos": {
+                                                "type": "array",
+                                                "items": {"type": "string"}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Error en la petición",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "error": {"type": "string"}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "/api/libros": {
+                "get": {
+                    "tags": ["Libros"],
+                    "summary": "Obtener lista de libros de la Biblia",
+                    "description": "Retorna la lista completa de libros de la Biblia con su información",
+                    "responses": {
+                        "200": {
+                            "description": "Lista de libros",
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "libros": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Libro": {"type": "string"},
+                                                        "Abrev": {"type": "string"},
+                                                        "Total": {"type": "integer"},
+                                                        "Testamento": {"type": "string", "enum": ["AT", "NT"]}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
 
 @app.route('/api/versiculos', methods=['GET'])
 def obtener_versiculos():
