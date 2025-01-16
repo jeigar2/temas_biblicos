@@ -8,6 +8,8 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 
 [Genealogía de Noé](markdown/Genealogia_de_Noe.md)
 
+[Genealogía de Moises y Aaron](markdown/Genealogia_de_Moises_y_Aaron.md)
+
 [Nube de palabras de cada capítulo de la Biblia](markdown/Nube_palabras_Biblia.md) (en construccción)
 
 [API de la Biblia](markdown/API_de_la_Biblia.md)
