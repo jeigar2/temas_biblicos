@@ -30,3 +30,6 @@ class BibliaInfo:
     def obtener_todos_libros(self):
         """Retorna la lista completa de libros con su información"""
         return self.df.to_dict('records') 
+
+#ejemplo = BibliaInfo()
+#print(ejemplo.obtener_todos_libros())
