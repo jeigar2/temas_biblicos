@@ -60,7 +60,8 @@ Devuelve:
     "referencia": {
         "libro": {
             "abreviatura": "Sal",
-            "nombre": "Salmos"
+            "nombre": "Salmos",
+            "testamento": "AT"
         },
         "capitulo": 2,
         "versiculos": "7-"
@@ -96,7 +97,8 @@ Devuelve:
     "referencia": {
         "libro": {
             "abreviatura": "Sal",
-            "nombre": "Salmos"
+            "nombre": "Salmos",
+            "testamento": "AT"
         },
         "capitulo": 3,
         "versiculos": "-3"
@@ -122,47 +124,56 @@ Devuelve:
     {
       "Abrev": "Heb",
       "Libro": "Hebreos",
-      "Total": 13
+      "Total": 13,
+      "testamento": "NT"
     },
     {
       "Abrev": "St",
       "Libro": "Santiago",
-      "Total": 5
+      "Total": 5,
+      "testamento": "NT"
     },
     {
       "Abrev": "1_Pe",
       "Libro": "1_Pedro",
-      "Total": 5
+      "Total": 5,
+      "testamento": "NT"
     },
     {
       "Abrev": "2_Pe",
       "Libro": "2_Pedro",
-      "Total": 3
+      "Total": 3,
+      "testamento": "NT"
     },
     {
       "Abrev": "1_Jn",
       "Libro": "1_Juan",
-      "Total": 5
+      "Total": 5,
+      "testamento": "NT"
     },
     {
       "Abrev": "2_Jn",
       "Libro": "2_Juan",
-      "Total": 1
+      "Total": 1,
+      "testamento": "NT"
     },
     {
       "Abrev": "3_Jn",
       "Libro": "3_Juan",
-      "Total": 1
+      "Total": 1,
+      "testamento": "NT"
     },
     {
       "Abrev": "Jud",
       "Libro": "Judas",
-      "Total": 1
+      "Total": 1,
+      "testamento": "NT"
     },
     {
       "Abrev": "Ap",
       "Libro": "Apocalipsis",
-      "Total": 22
+      "Total": 22,
+      "testamento": "NT"
     },
     {...}
 ]
