@@ -10,8 +10,11 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 
 [Nube de palabras de cada capítulo de la Biblia](markdown/Nube_palabras_Biblia.md) (en construccción)
 
+[API de la Biblia](markdown/API_de_la_Biblia.md)
+
 ## Nuevos pasos a dar
 
+### Nube de palabras de cada capítulo de la Biblia
 - Crear una nube de palabras con cada capítulo de cada libro de la Biblia,
 
 - Se ha subido varios textos a los que se les ha filtrados unas palabras con los [patrones](Biblia/texto_filtrado/patron-filtro.txt)
@@ -64,3 +67,13 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
   - **TODO**: Crear al igual que [Genesis](/Biblia/Genesis.md) una hoja con acceso a todos los nubes de palabras de cada capítulo de dicho libro, crear una hoja por libro.
   
   ~~![Gen8](Biblia/nube_de_palabras/AT/Gn/Gn_8.svg)~~
+
+### API de la Biblia
+
+- Version 1.0.0:
+
+1. Validación de libros y capítulos usando el CSV
+2. Soporte para búsqueda por nombre completo o abreviatura
+3. Soporte para intervalos abiertos (ej: "Sal 2, 7-" o "Sal 3, -3")
+4. Nuevo endpoint /api/libros que devuelve la lista completa de libros
+5. Respuestas enriquecidas con nombre completo y abreviatura del libro
