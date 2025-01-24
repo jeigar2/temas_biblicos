@@ -1,0 +1,312 @@
+{
+    "archidiocesis": [
+      {
+        "nombre": "Santiago de Compostela",
+        "diocesis": [
+          {
+            "nombre": "Lugo",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-lugo/"
+          },
+          {
+            "nombre": "Mondonedo-Ferrol",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-mondonedo-ferrol/"
+          },
+          {
+            "nombre": "Orense",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-orense/"
+          },
+          {
+            "nombre": "Tui-Vigo",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-tui-vigo/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-santiago-de-compostela/"
+      },
+      {
+        "nombre": "Oviedo",
+        "diocesis": [
+          {
+            "nombre": "León",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-leon/"
+          },
+          {
+            "nombre": "Santander",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-santander/"
+          },
+          {
+            "nombre": "Astorga",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-astorga/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-oviedo/"
+      },
+      {
+        "nombre": "Burgos",
+        "diocesis": [
+          {
+            "nombre": "Bilbao",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-bilbao/"
+          },
+          {
+            "nombre": "Osma-Soria",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-osma-soria/"
+          },
+          {
+            "nombre": "Palencia",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-palencia/"
+          },
+          {
+            "nombre": "Vitoria",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-vitoria/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-burgos/"
+      },
+      {
+        "nombre": "Pamplona y Tudela",
+        "diocesis": [
+          {
+            "nombre": "Calahorra",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-calahorra"
+          },
+          {
+            "nombre": "Jaca",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-jaca/"
+          },
+          {
+            "nombre": "San Sebastián",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-san-sebastian/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-pamplona-y-tudela/"
+      },
+      {
+        "nombre": "Zaragoza",
+        "diocesis": [
+          {
+            "nombre": "Barbastro",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-barbastro/"
+          },
+          {
+            "nombre": "Huesca",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-huesca/"
+          },
+          {
+            "nombre": "Tarazona",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-tarazona/"
+          },
+          {
+            "nombre": "Teruel y Albarracín",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-teruel-y-albarracin/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-zaragoza/"
+      },
+      {
+        "nombre": "Tarragona",
+        "diocesis": [
+          {
+            "nombre": "Girona",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-girona/"
+          },
+          {
+            "nombre": "Lleida",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-lleida/"
+          },
+          {
+            "nombre": "Solsona",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-solsona/"
+          },
+          {
+            "nombre": "Tortosa",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-tortosa/"
+          },
+          {
+            "nombre": "Urgell",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-urgell/"
+          },
+          {
+            "nombre": "Vic",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-vic/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-tarragona/"
+      },
+      {
+        "nombre": "Barcelona",
+        "diocesis": [
+          {
+            "nombre": "Sant Feliu de Llobregat",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-sant-feliu-de-llobregat/"
+          },
+          {
+            "nombre": "Terrassa",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-terrassa/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-barcelona/"
+      },
+      {
+        "nombre": "Valladolid",
+        "diocesis": [
+          {
+            "nombre": "Ávila",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-avila/"
+          },
+          {
+            "nombre": "Ciudad Rodrigo",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-ciudad-rodrigo/"
+          },
+          {
+            "nombre": "Salamanca",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-salamanca/"
+          },
+          {
+            "nombre": "Segovia",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-segovia/"
+          },
+          {
+            "nombre": "Zamora",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-zamora/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-valladolid/"
+      },
+      {
+        "nombre": "Madrid",
+        "diocesis": [
+          {
+            "nombre": "Alcalá",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-alcala/"
+          },
+          {
+            "nombre": "Getafe",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-getafe/"
+          },
+          {
+            "nombre": "Ordinariato para los Católicos Orientales en España",
+            "url": "https://www.conferenciaepiscopal.es/ordinariato-para-los-catolicos-orientales-en-espana/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-madrid/"
+      },
+      {
+        "nombre": "Toledo",
+        "diocesis": [
+          {
+            "nombre": "Albacete",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-albacete/"
+          },
+          {
+            "nombre": "Ciudad Real",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-ciudad-real/"
+          },
+          {
+            "nombre": "Cuenca",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-cuenca/"
+          },
+          {
+            "nombre": "Sigüenza-Guadalajara",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-siguenza-guadalajara/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-toledo/"
+      },
+      {
+        "nombre": "Valencia",
+        "diocesis": [
+          {
+            "nombre": "Ibiza",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-ibiza/"
+          },
+          {
+            "nombre": "Mallorca",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-mallorca/"
+          },
+          {
+            "nombre": "Menorca",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-menorca/"
+          },
+          {
+            "nombre": "Orihuela-Alicante",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-orihuela-alicante/"
+          },
+          {
+            "nombre": "Segorbe-Castellón",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-segorbe-castellon/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-valencia/"
+      },
+      {
+        "nombre": "Mérida-Badajoz",
+        "diocesis": [
+          {
+            "nombre": "Cória-Cáceres",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-coria-caceres/"
+          },
+          {
+            "nombre": "Plasencia",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-plasencia/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-merida-badajoz/"
+      },
+      {
+        "nombre": "Sevilla",
+        "diocesis": [
+          {
+            "nombre": "Jerez de la Frontera",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-jerez-de-la-frontera/"
+          },
+          {
+            "nombre": "Cadiz y Ceuta",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-cadiz-y-ceuta/"
+          },
+          {
+            "nombre": "Córdoba",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-cordoba/"
+          },
+          {
+            "nombre": "Huelva",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-huelva/"
+          },
+          {
+            "nombre": "Canarias",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-canarias/"
+          },
+          {
+            "nombre": "Tenerife",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-tenerife/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-sevilla/"
+      },
+      {
+        "nombre": "Granada",
+        "diocesis": [
+          {
+            "nombre": "Almería",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-almeria/"
+          },
+          {
+            "nombre": "Cartagena",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-cartagena/"
+          },
+          {
+            "nombre": "Guadix",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-guadix/"
+          },
+          {
+            "nombre": "Jaén",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-jaen/"
+          },
+          {
+            "nombre": "Málaga",
+            "url": "https://www.conferenciaepiscopal.es/diocesis-de-malaga/"
+          }
+        ],
+        "url": "https://www.conferenciaepiscopal.es/archidiocesis-de-granada/"
+      }
+    ]
+  }

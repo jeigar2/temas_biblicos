@@ -15,9 +15,11 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 [API de la Biblia](markdown/API_de_la_Biblia.md)
 
 [Archidiócesis de España](markdown/Archidiócesis_de_España.md)
+
 ## Nuevos pasos a dar
 
 ### Nube de palabras de cada capítulo de la Biblia
+
 - Crear una nube de palabras con cada capítulo de cada libro de la Biblia,
 
 - Se ha subido varios textos a los que se les ha filtrados unas palabras con los [patrones](Biblia/texto_filtrado/patron-filtro.txt)
@@ -80,3 +82,9 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 3. Soporte para intervalos abiertos (ej: "Sal 2, 7-" o "Sal 3, -3")
 4. Nuevo endpoint /api/libros que devuelve la lista completa de libros
 5. Respuestas enriquecidas con nombre completo y abreviatura del libro
+
+### Archidiócesis de España
+
+- Version 1.0.0:
+
+1. Diagrama de tipo mapa mental de la Archidiócesis de España
