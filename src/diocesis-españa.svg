@@ -1,0 +1,647 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    contentStyleType="text/css" data-diagram-type="MINDMAP" height="3230px"
+    preserveAspectRatio="none" style="width:813px;height:3230px;background:#FFFFFF;" version="1.1"
+    viewBox="0 0 813 3230" width="813px" zoomAndPan="magnify">
+    <defs>
+        <style type="text/css">
+            .diocese-info {
+                display: none;
+                position: absolute;
+                background: white;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                z-index: 1000;
+                max-width: 300px;
+            }
+            
+            .clickable {
+                cursor: pointer;
+            }
+            
+            .clickable:hover {
+                opacity: 0.8;
+            }
+
+            .tooltip-text {
+                font-family: sans-serif;
+                font-size: 14px;
+                fill: black;
+            }
+        </style>
+    </defs>
+
+    <script type="text/javascript">
+        <![CDATA[
+        // Datos JSON incrustados directamente
+        const diocesisData = {"archidiocesis":[{"nombre":"Santiago de Compostela","diocesis":[{"nombre":"Lugo","url":"https://www.conferenciaepiscopal.es/diocesis-de-lugo/"},{"nombre":"Mondonedo-Ferrol","url":"https://www.conferenciaepiscopal.es/diocesis-de-mondonedo-ferrol/"},{"nombre":"Orense","url":"https://www.conferenciaepiscopal.es/diocesis-de-orense/"},{"nombre":"Tui-Vigo","url":"https://www.conferenciaepiscopal.es/diocesis-de-tui-vigo/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-santiago-de-compostela/"},{"nombre":"Oviedo","diocesis":[{"nombre":"León","url":"https://www.conferenciaepiscopal.es/diocesis-de-leon/"},{"nombre":"Santander","url":"https://www.conferenciaepiscopal.es/diocesis-de-santander/"},{"nombre":"Astorga","url":"https://www.conferenciaepiscopal.es/diocesis-de-astorga/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-oviedo/"},{"nombre":"Burgos","diocesis":[{"nombre":"Bilbao","url":"https://www.conferenciaepiscopal.es/diocesis-de-bilbao/"},{"nombre":"Osma-Soria","url":"https://www.conferenciaepiscopal.es/diocesis-de-osma-soria/"},{"nombre":"Palencia","url":"https://www.conferenciaepiscopal.es/diocesis-de-palencia/"},{"nombre":"Vitoria","url":"https://www.conferenciaepiscopal.es/diocesis-de-vitoria/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-burgos/"},{"nombre":"Pamplona y Tudela","diocesis":[{"nombre":"Calahorra","url":"https://www.conferenciaepiscopal.es/diocesis-de-calahorra"},{"nombre":"Jaca","url":"https://www.conferenciaepiscopal.es/diocesis-de-jaca/"},{"nombre":"San Sebastián","url":"https://www.conferenciaepiscopal.es/diocesis-de-san-sebastian/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-pamplona-y-tudela/"},{"nombre":"Zaragoza","diocesis":[{"nombre":"Barbastro","url":"https://www.conferenciaepiscopal.es/diocesis-de-barbastro/"},{"nombre":"Huesca","url":"https://www.conferenciaepiscopal.es/diocesis-de-huesca/"},{"nombre":"Tarazona","url":"https://www.conferenciaepiscopal.es/diocesis-de-tarazona/"},{"nombre":"Teruel y Albarracín","url":"https://www.conferenciaepiscopal.es/diocesis-de-teruel-y-albarracin/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-zaragoza/"},{"nombre":"Tarragona","diocesis":[{"nombre":"Girona","url":"https://www.conferenciaepiscopal.es/diocesis-de-girona/"},{"nombre":"Lleida","url":"https://www.conferenciaepiscopal.es/diocesis-de-lleida/"},{"nombre":"Solsona","url":"https://www.conferenciaepiscopal.es/diocesis-de-solsona/"},{"nombre":"Tortosa","url":"https://www.conferenciaepiscopal.es/diocesis-de-tortosa/"},{"nombre":"Urgell","url":"https://www.conferenciaepiscopal.es/diocesis-de-urgell/"},{"nombre":"Vic","url":"https://www.conferenciaepiscopal.es/diocesis-de-vic/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-tarragona/"},{"nombre":"Barcelona","diocesis":[{"nombre":"Sant Feliu de Llobregat","url":"https://www.conferenciaepiscopal.es/diocesis-de-sant-feliu-de-llobregat/"},{"nombre":"Terrassa","url":"https://www.conferenciaepiscopal.es/diocesis-de-terrassa/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-barcelona/"},{"nombre":"Valladolid","diocesis":[{"nombre":"Ávila","url":"https://www.conferenciaepiscopal.es/diocesis-de-avila/"},{"nombre":"Ciudad Rodrigo","url":"https://www.conferenciaepiscopal.es/diocesis-de-ciudad-rodrigo/"},{"nombre":"Salamanca","url":"https://www.conferenciaepiscopal.es/diocesis-de-salamanca/"},{"nombre":"Segovia","url":"https://www.conferenciaepiscopal.es/diocesis-de-segovia/"},{"nombre":"Zamora","url":"https://www.conferenciaepiscopal.es/diocesis-de-zamora/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-valladolid/"},{"nombre":"Madrid","diocesis":[{"nombre":"Alcalá","url":"https://www.conferenciaepiscopal.es/diocesis-de-alcala/"},{"nombre":"Getafe","url":"https://www.conferenciaepiscopal.es/diocesis-de-getafe/"},{"nombre":"Ordinariato para los Católicos Orientales en España","url":"https://www.conferenciaepiscopal.es/ordinariato-para-los-catolicos-orientales-en-espana/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-madrid/"},{"nombre":"Toledo","diocesis":[{"nombre":"Albacete","url":"https://www.conferenciaepiscopal.es/diocesis-de-albacete/"},{"nombre":"Ciudad Real","url":"https://www.conferenciaepiscopal.es/diocesis-de-ciudad-real/"},{"nombre":"Cuenca","url":"https://www.conferenciaepiscopal.es/diocesis-de-cuenca/"},{"nombre":"Sigüenza-Guadalajara","url":"https://www.conferenciaepiscopal.es/diocesis-de-siguenza-guadalajara/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-toledo/"},{"nombre":"Valencia","diocesis":[{"nombre":"Ibiza","url":"https://www.conferenciaepiscopal.es/diocesis-de-ibiza/"},{"nombre":"Mallorca","url":"https://www.conferenciaepiscopal.es/diocesis-de-mallorca/"},{"nombre":"Menorca","url":"https://www.conferenciaepiscopal.es/diocesis-de-menorca/"},{"nombre":"Orihuela-Alicante","url":"https://www.conferenciaepiscopal.es/diocesis-de-orihuela-alicante/"},{"nombre":"Segorbe-Castellón","url":"https://www.conferenciaepiscopal.es/diocesis-de-segorbe-castellon/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-valencia/"},{"nombre":"Mérida-Badajoz","diocesis":[{"nombre":"Cória-Cáceres","url":"https://www.conferenciaepiscopal.es/diocesis-de-coria-caceres/"},{"nombre":"Plasencia","url":"https://www.conferenciaepiscopal.es/diocesis-de-plasencia/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-merida-badajoz/"},{"nombre":"Sevilla","diocesis":[{"nombre":"Jerez de la Frontera","url":"https://www.conferenciaepiscopal.es/diocesis-de-jerez-de-la-frontera/"},{"nombre":"Cadiz y Ceuta","url":"https://www.conferenciaepiscopal.es/diocesis-de-cadiz-y-ceuta/"},{"nombre":"Córdoba","url":"https://www.conferenciaepiscopal.es/diocesis-de-cordoba/"},{"nombre":"Huelva","url":"https://www.conferenciaepiscopal.es/diocesis-de-huelva/"},{"nombre":"Canarias","url":"https://www.conferenciaepiscopal.es/diocesis-de-canarias/"},{"nombre":"Tenerife","url":"https://www.conferenciaepiscopal.es/diocesis-de-tenerife/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-sevilla/"},{"nombre":"Granada","diocesis":[{"nombre":"Almería","url":"https://www.conferenciaepiscopal.es/diocesis-de-almeria/"},{"nombre":"Cartagena","url":"https://www.conferenciaepiscopal.es/diocesis-de-cartagena/"},{"nombre":"Guadix","url":"https://www.conferenciaepiscopal.es/diocesis-de-guadix/"},{"nombre":"Jaén","url":"https://www.conferenciaepiscopal.es/diocesis-de-jaen/"},{"nombre":"Málaga","url":"https://www.conferenciaepiscopal.es/diocesis-de-malaga/"}],"url":"https://www.conferenciaepiscopal.es/archidiocesis-de-granada/"}]  };
+
+        function showInfo(event, nombre) {
+            // Ocultar cualquier tooltip existente
+            hideAllTooltips();
+            
+            let info = findDioceseInfo(diocesisData, nombre);
+            if (info) {
+                // Obtener el elemento SVG raíz
+                let svg = document.querySelector('svg');
+                
+                // Crear grupo para el tooltip
+                let tooltip = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                tooltip.setAttribute("class", "diocese-info");
+                
+                // Crear rectángulo de fondo
+                let rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("fill", "white");
+                rect.setAttribute("stroke", "#ccc");
+                rect.setAttribute("rx", "5");
+                rect.setAttribute("ry", "5");
+                
+                // Crear textos
+                let title = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                title.setAttribute("class", "tooltip-text");
+                title.setAttribute("x", "10");
+                title.setAttribute("y", "20");
+                title.textContent = info.nombre;
+                
+                let link = document.createElementNS("http://www.w3.org/2000/svg", "a");
+                link.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", info.url);
+                link.setAttribute("target", "_blank");
+                
+                let linkText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                linkText.setAttribute("class", "tooltip-text");
+                linkText.setAttribute("x", "10");
+                linkText.setAttribute("y", "40");
+                linkText.textContent = "Ver más información";
+                
+                link.appendChild(linkText);
+                
+                // Calcular dimensiones del tooltip
+                let bbox = title.getBBox();
+                let width = Math.max(bbox.width, 150) + 20;
+                let height = 60;
+                
+                // Posicionar tooltip cerca del cursor
+                let pt = svg.createSVGPoint();
+                pt.x = event.clientX;
+                pt.y = event.clientY;
+                let svgP = pt.matrixTransform(svg.getScreenCTM().inverse());
+                
+                rect.setAttribute("width", width);
+                rect.setAttribute("height", height);
+                rect.setAttribute("x", svgP.x + 10);
+                rect.setAttribute("y", svgP.y + 10);
+                
+                title.setAttribute("x", svgP.x + 20);
+                title.setAttribute("y", svgP.y + 30);
+                linkText.setAttribute("x", svgP.x + 20);
+                linkText.setAttribute("y", svgP.y + 50);
+                
+                tooltip.appendChild(rect);
+                tooltip.appendChild(title);
+                tooltip.appendChild(link);
+                
+                svg.appendChild(tooltip);
+                tooltip.style.display = "block";
+            }
+        }
+        
+        function hideAllTooltips() {
+            let tooltips = document.getElementsByClassName('diocese-info');
+            Array.from(tooltips).forEach(tooltip => {
+                tooltip.remove();
+            });
+        }
+        
+        function findDioceseInfo(data, nombre) {
+            // Limpiar el nombre de cualquier sufijo (x3, x4, etc.)
+            let cleanNombre = nombre.replace(/\s+x\d+$/, '');
+            
+            // Buscar en archidiócesis
+            for (let arch of data.archidiocesis) {
+                if (arch.nombre.toLowerCase() === cleanNombre.toLowerCase()) {
+                    return arch;
+                }
+                // Buscar en diócesis
+                for (let diocese of arch.diocesis) {
+                    if (diocese.nombre.toLowerCase() === cleanNombre.toLowerCase()) {
+                        return diocese;
+                    }
+                }
+            }
+            return null;
+        }
+        
+        // Cerrar tooltip al hacer click fuera
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.clickable')) {
+                hideAllTooltips();
+            }
+        });
+        ]]>
+    </script>
+
+    <g>
+        <rect fill="#F1F1F1" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="219.9307" x="10" y="1596.3125" />
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="199.9307" x="20" y="1619.3076" class="clickable" onclick="showInfo(event, 'Archidi&#243;cesis de Espa&#241;a x14')">Archidi&#243;cesis de Espa&#241;a x14</text>
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="213.0879" x="279.9307" y="104.4453" class="clickable" onclick="showInfo(event, 'Santiago de Compostela x4')">Santiago de Compostela x4</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="193.0879" x="289.9307" y="127.4404" class="clickable" onclick="showInfo(event, 'Santiago de Compostela x4')">Santiago de Compostela x4</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="54.125" x="543.0186" y="20" class="clickable" onclick="showInfo(event, 'Lugo')">Lugo</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="34.125" x="553.0186" y="42.9951" class="clickable" onclick="showInfo(event, 'Lugo')">Lugo</text>
+        <path
+            d="M493.0186,122.5938 L503.0186,122.5938 C518.0186,122.5938 518.0186,38.1484 533.0186,38.1484 L543.0186,38.1484 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="147.5928" x="543.0186" y="76.2969" class="clickable" onclick="showInfo(event, 'Mondonedo-Ferrol')">Mondonedo-Ferrol</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="127.5928" x="553.0186" y="99.292" class="clickable" onclick="showInfo(event, 'Mondonedo-Ferrol')">Mondonedo-Ferrol</text>
+        <path
+            d="M493.0186,122.5938 L503.0186,122.5938 C518.0186,122.5938 518.0186,94.4453 533.0186,94.4453 L543.0186,94.4453 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="70.1689" x="543.0186" y="132.5938" class="clickable" onclick="showInfo(event, 'Orense')">Orense</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="50.1689" x="553.0186" y="155.5889" class="clickable" onclick="showInfo(event, 'Orense')">Orense</text>
+        <path
+            d="M493.0186,122.5938 L503.0186,122.5938 C518.0186,122.5938 518.0186,150.7422 533.0186,150.7422 L543.0186,150.7422 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="77.2852" x="543.0186" y="188.8906" class="clickable" onclick="showInfo(event, 'Tui-Vigo')">Tui-Vigo</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="57.2852" x="553.0186" y="211.8857" class="clickable" onclick="showInfo(event, 'Tui-Vigo')">Tui-Vigo</text>
+        <path
+            d="M493.0186,122.5938 L503.0186,122.5938 C518.0186,122.5938 518.0186,207.0391 533.0186,207.0391 L543.0186,207.0391 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,122.5938 269.9307,122.5938 L279.9307,122.5938 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="90.9023" x="279.9307" y="301.4844" class="clickable" onclick="showInfo(event, 'Oviedo x3')">Oviedo x3</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="70.9023" x="289.9307" y="324.4795" class="clickable" onclick="showInfo(event, 'Oviedo x3')">Oviedo x3</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="53.8516" x="420.833" y="245.1875" class="clickable" onclick="showInfo(event, 'Le&#243;n')">Le&#243;n</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="33.8516" x="430.833" y="268.1826" class="clickable" onclick="showInfo(event, 'Le&#243;n')">Le&#243;n</text>
+        <path
+            d="M370.833,319.6328 L380.833,319.6328 C395.833,319.6328 395.833,263.3359 410.833,263.3359 L420.833,263.3359 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="92.5361" x="420.833" y="301.4844" class="clickable" onclick="showInfo(event, 'Santander')">Santander</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="72.5361" x="430.833" y="324.4795" class="clickable" onclick="showInfo(event, 'Santander')">Santander</text>
+        <path
+            d="M370.833,319.6328 L380.833,319.6328 C395.833,319.6328 395.833,319.6328 410.833,319.6328 L420.833,319.6328 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="74.1475" x="420.833" y="357.7813" class="clickable" onclick="showInfo(event, 'Astorga')">Astorga</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="54.1475" x="430.833" y="380.7764" class="clickable" onclick="showInfo(event, 'Astorga')">Astorga</text>
+        <path
+            d="M370.833,319.6328 L380.833,319.6328 C395.833,319.6328 395.833,375.9297 410.833,375.9297 L420.833,375.9297 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,319.6328 269.9307,319.6328 L279.9307,319.6328 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="90.6221" x="279.9307" y="498.5234" class="clickable" onclick="showInfo(event, 'Burgos x4')">Burgos x4</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="70.6221" x="289.9307" y="521.5186" class="clickable" onclick="showInfo(event, 'Burgos x4')">Burgos x4</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="63.415" x="420.5527" y="414.0781" class="clickable" onclick="showInfo(event, 'Bilbao')">Bilbao</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="43.415" x="430.5527" y="437.0732" class="clickable" onclick="showInfo(event, 'Bilbao')">Bilbao</text>
+        <path
+            d="M370.5527,516.6719 L380.5527,516.6719 C395.5527,516.6719 395.5527,432.2266 410.5527,432.2266 L420.5527,432.2266 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="101.2588" x="420.5527" y="470.375" class="clickable" onclick="showInfo(event, 'Osma-Soria')">Osma-Soria</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="81.2588" x="430.5527" y="493.3701" class="clickable" onclick="showInfo(event, 'Osma-Soria')">Osma-Soria</text>
+        <path
+            d="M370.5527,516.6719 L380.5527,516.6719 C395.5527,516.6719 395.5527,488.5234 410.5527,488.5234 L420.5527,488.5234 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="78.5635" x="420.5527" y="526.6719" class="clickable" onclick="showInfo(event, 'Palencia')">Palencia</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="58.5635" x="430.5527" y="549.667" class="clickable" onclick="showInfo(event, 'Palencia')">Palencia</text>
+        <path
+            d="M370.5527,516.6719 L380.5527,516.6719 C395.5527,516.6719 395.5527,544.8203 410.5527,544.8203 L420.5527,544.8203 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="65.7461" x="420.5527" y="582.9688" class="clickable" onclick="showInfo(event, 'Vitoria')">Vitoria</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="45.7461" x="430.5527" y="605.9639" class="clickable" onclick="showInfo(event, 'Vitoria')">Vitoria</text>
+        <path
+            d="M370.5527,516.6719 L380.5527,516.6719 C395.5527,516.6719 395.5527,601.1172 410.5527,601.1172 L420.5527,601.1172 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,516.6719 269.9307,516.6719 L279.9307,516.6719 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="175.6748" x="279.9307" y="695.5625" class="clickable" onclick="showInfo(event, 'Pamplona y Tudela x3')">Pamplona y Tudela x3</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="155.6748" x="289.9307" y="718.5576" class="clickable" onclick="showInfo(event, 'Pamplona y Tudela x3')">Pamplona y Tudela x3</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="88.3525" x="505.6055" y="639.2656" class="clickable" onclick="showInfo(event, 'Calahorra')">Calahorra</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="68.3525" x="515.6055" y="662.2607" class="clickable" onclick="showInfo(event, 'Calahorra')">Calahorra</text>
+        <path
+            d="M455.6055,713.7109 L465.6055,713.7109 C480.6055,713.7109 480.6055,657.4141 495.6055,657.4141 L505.6055,657.4141 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="48.9844" x="505.6055" y="695.5625" class="clickable" onclick="showInfo(event, 'Jaca')">Jaca</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="28.9844" x="515.6055" y="718.5576" class="clickable" onclick="showInfo(event, 'Jaca')">Jaca</text>
+        <path
+            d="M455.6055,713.7109 L465.6055,713.7109 C480.6055,713.7109 480.6055,713.7109 495.6055,713.7109 L505.6055,713.7109 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="119.8799" x="505.6055" y="751.8594" class="clickable" onclick="showInfo(event, 'San Sebasti&#225;n')">San Sebasti&#225;n</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="99.8799" x="515.6055" y="774.8545" class="clickable" onclick="showInfo(event, 'San Sebasti&#225;n')">San Sebasti&#225;n</text>
+        <path
+            d="M455.6055,713.7109 L465.6055,713.7109 C480.6055,713.7109 480.6055,770.0078 495.6055,770.0078 L505.6055,770.0078 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,713.7109 269.9307,713.7109 L279.9307,713.7109 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="107.5273" x="279.9307" y="892.6016" class="clickable" onclick="showInfo(event, 'Zaragoza x4')">Zaragoza x4</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="87.5273" x="289.9307" y="915.5967" class="clickable" onclick="showInfo(event, 'Zaragoza x4')">Zaragoza x4</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="88.5098" x="437.458" y="808.1563" class="clickable" onclick="showInfo(event, 'Barbastro')">Barbastro</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="68.5098" x="447.458" y="831.1514" class="clickable" onclick="showInfo(event, 'Barbastro')">Barbastro</text>
+        <path
+            d="M387.458,910.75 L397.458,910.75 C412.458,910.75 412.458,826.3047 427.458,826.3047 L437.458,826.3047 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="71.584" x="437.458" y="864.4531" class="clickable" onclick="showInfo(event, 'Huesca')">Huesca</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="51.584" x="447.458" y="887.4482" class="clickable" onclick="showInfo(event, 'Huesca')">Huesca</text>
+        <path
+            d="M387.458,910.75 L397.458,910.75 C412.458,910.75 412.458,882.6016 427.458,882.6016 L437.458,882.6016 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="84.832" x="437.458" y="920.75" class="clickable" onclick="showInfo(event, 'Tarazona')">Tarazona</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="64.832" x="447.458" y="943.7451" class="clickable" onclick="showInfo(event, 'Tarazona')">Tarazona</text>
+        <path
+            d="M387.458,910.75 L397.458,910.75 C412.458,910.75 412.458,938.8984 427.458,938.8984 L437.458,938.8984 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="152.9658" x="437.458" y="977.0469" class="clickable" onclick="showInfo(event, 'Teruel y Albarrac&#237;n')">Teruel y Albarrac&#237;n</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="132.9658" x="447.458" y="1000.042" class="clickable" onclick="showInfo(event, 'Teruel y Albarrac&#237;n')">Teruel y Albarrac&#237;n</text>
+        <path
+            d="M387.458,910.75 L397.458,910.75 C412.458,910.75 412.458,995.1953 427.458,995.1953 L437.458,995.1953 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,910.75 269.9307,910.75 L279.9307,910.75 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="113.7686" x="279.9307" y="1174.0859" class="clickable" onclick="showInfo(event, 'Tarragona x6')">Tarragona x6</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="93.7686" x="289.9307" y="1197.0811" class="clickable" onclick="showInfo(event, 'Tarragona x6')">Tarragona x6</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="66.5117" x="443.6992" y="1033.3438" class="clickable" onclick="showInfo(event, 'Girona')">Girona</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="46.5117" x="453.6992" y="1056.3389" class="clickable" onclick="showInfo(event, 'Girona')">Girona</text>
+        <path
+            d="M393.6992,1192.2344 L403.6992,1192.2344 C418.6992,1192.2344 418.6992,1051.4922 433.6992,1051.4922 L443.6992,1051.4922 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="61.6582" x="443.6992" y="1089.6406" class="clickable" onclick="showInfo(event, 'Lleida')">Lleida</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="41.6582" x="453.6992" y="1112.6357" class="clickable" onclick="showInfo(event, 'Lleida')">Lleida</text>
+        <path
+            d="M393.6992,1192.2344 L403.6992,1192.2344 C418.6992,1192.2344 418.6992,1107.7891 433.6992,1107.7891 L443.6992,1107.7891 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="74.6533" x="443.6992" y="1145.9375" class="clickable" onclick="showInfo(event, 'Solsona')">Solsona</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="54.6533" x="453.6992" y="1168.9326" class="clickable" onclick="showInfo(event, 'Solsona')">Solsona</text>
+        <path
+            d="M393.6992,1192.2344 L403.6992,1192.2344 C418.6992,1192.2344 418.6992,1164.0859 433.6992,1164.0859 L443.6992,1164.0859 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="72.8008" x="443.6992" y="1202.2344" class="clickable" onclick="showInfo(event, 'Tortosa')">Tortosa</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="52.8008" x="453.6992" y="1225.2295" class="clickable" onclick="showInfo(event, 'Tortosa')">Tortosa</text>
+        <path
+            d="M393.6992,1192.2344 L403.6992,1192.2344 C418.6992,1192.2344 418.6992,1220.3828 433.6992,1220.3828 L443.6992,1220.3828 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="61.2822" x="443.6992" y="1258.5313" class="clickable" onclick="showInfo(event, 'Urgell')">Urgell</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="41.2822" x="453.6992" y="1281.5264" class="clickable" onclick="showInfo(event, 'Urgell')">Urgell</text>
+        <path
+            d="M393.6992,1192.2344 L403.6992,1192.2344 C418.6992,1192.2344 418.6992,1276.6797 433.6992,1276.6797 L443.6992,1276.6797 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="41.1641" x="443.6992" y="1314.8281" class="clickable" onclick="showInfo(event, 'Vic')">Vic</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="21.1641" x="453.6992" y="1337.8232" class="clickable" onclick="showInfo(event, 'Vic')">Vic</text>
+        <path
+            d="M393.6992,1192.2344 L403.6992,1192.2344 C418.6992,1192.2344 418.6992,1332.9766 433.6992,1332.9766 L443.6992,1332.9766 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,1192.2344 269.9307,1192.2344 L279.9307,1192.2344 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="111.7998" x="279.9307" y="1399.2734" class="clickable" onclick="showInfo(event, 'Barcelona x2')">Barcelona x2</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="91.7998" x="289.9307" y="1422.2686" class="clickable" onclick="showInfo(event, 'Barcelona x2')">Barcelona x2</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="182.4629" x="441.7305" y="1371.125" class="clickable" onclick="showInfo(event, 'Sant Feliu de Llobregat')">Sant Feliu de Llobregat</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="162.4629" x="451.7305" y="1394.1201" class="clickable" onclick="showInfo(event, 'Sant Feliu de Llobregat')">Sant Feliu de Llobregat</text>
+        <path
+            d="M391.7305,1417.4219 L401.7305,1417.4219 C416.7305,1417.4219 416.7305,1389.2734 431.7305,1389.2734 L441.7305,1389.2734 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="80.4229" x="441.7305" y="1427.4219" class="clickable" onclick="showInfo(event, 'Terrassa')">Terrassa</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="60.4229" x="451.7305" y="1450.417" class="clickable" onclick="showInfo(event, 'Terrassa')">Terrassa</text>
+        <path
+            d="M391.7305,1417.4219 L401.7305,1417.4219 C416.7305,1417.4219 416.7305,1445.5703 431.7305,1445.5703 L441.7305,1445.5703 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,1417.4219 269.9307,1417.4219 L279.9307,1417.4219 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="110.2754" x="279.9307" y="1596.3125" class="clickable" onclick="showInfo(event, 'Valladolid x5')">Valladolid x5</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="90.2754" x="289.9307" y="1619.3076" class="clickable" onclick="showInfo(event, 'Valladolid x5')">Valladolid x5</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="54.2207" x="440.2061" y="1483.7188" class="clickable" onclick="showInfo(event, '&#193;vila')">&#193;vila</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="34.2207" x="450.2061" y="1506.7139" class="clickable" onclick="showInfo(event, '&#193;vila')">&#193;vila</text>
+        <path
+            d="M390.2061,1614.4609 L400.2061,1614.4609 C415.2061,1614.4609 415.2061,1501.8672 430.2061,1501.8672 L440.2061,1501.8672 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="127.6182" x="440.2061" y="1540.0156" class="clickable" onclick="showInfo(event, 'Ciudad Rodrigo')">Ciudad Rodrigo</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="107.6182" x="450.2061" y="1563.0107" class="clickable" onclick="showInfo(event, 'Ciudad Rodrigo')">Ciudad Rodrigo</text>
+        <path
+            d="M390.2061,1614.4609 L400.2061,1614.4609 C415.2061,1614.4609 415.2061,1558.1641 430.2061,1558.1641 L440.2061,1558.1641 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="97.3008" x="440.2061" y="1596.3125" class="clickable" onclick="showInfo(event, 'Salamanca')">Salamanca</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="77.3008" x="450.2061" y="1619.3076" class="clickable" onclick="showInfo(event, 'Salamanca')">Salamanca</text>
+        <path
+            d="M390.2061,1614.4609 L400.2061,1614.4609 C415.2061,1614.4609 415.2061,1614.4609 430.2061,1614.4609 L440.2061,1614.4609 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="75.7061" x="440.2061" y="1652.6094" class="clickable" onclick="showInfo(event, 'Segovia')">Segovia</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="55.7061" x="450.2061" y="1675.6045" class="clickable" onclick="showInfo(event, 'Segovia')">Segovia</text>
+        <path
+            d="M390.2061,1614.4609 L400.2061,1614.4609 C415.2061,1614.4609 415.2061,1670.7578 430.2061,1670.7578 L440.2061,1670.7578 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="74.708" x="440.2061" y="1708.9063" class="clickable" onclick="showInfo(event, 'Zamora')">Zamora</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="54.708" x="450.2061" y="1731.9014" class="clickable" onclick="showInfo(event, 'Zamora')">Zamora</text>
+        <path
+            d="M390.2061,1614.4609 L400.2061,1614.4609 C415.2061,1614.4609 415.2061,1727.0547 430.2061,1727.0547 L440.2061,1727.0547 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,1614.4609 269.9307,1614.4609 L279.9307,1614.4609 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="89.7197" x="279.9307" y="1821.5" class="clickable" onclick="showInfo(event, 'Madrid x3')">Madrid x3</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="69.7197" x="289.9307" y="1844.4951" class="clickable" onclick="showInfo(event, 'Madrid x3')">Madrid x3</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="62.2119" x="419.6504" y="1765.2031" class="clickable" onclick="showInfo(event, 'Alcal&#225;')">Alcal&#225;</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="42.2119" x="429.6504" y="1788.1982" class="clickable" onclick="showInfo(event, 'Alcal&#225;')">Alcal&#225;</text>
+        <path
+            d="M369.6504,1839.6484 L379.6504,1839.6484 C394.6504,1839.6484 394.6504,1783.3516 409.6504,1783.3516 L419.6504,1783.3516 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="67.0723" x="419.6504" y="1821.5" class="clickable" onclick="showInfo(event, 'Getafe')">Getafe</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="47.0723" x="429.6504" y="1844.4951" class="clickable" onclick="showInfo(event, 'Getafe')">Getafe</text>
+        <path
+            d="M369.6504,1839.6484 L379.6504,1839.6484 C394.6504,1839.6484 394.6504,1839.6484 409.6504,1839.6484 L419.6504,1839.6484 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="381.8398" x="419.6504" y="1877.7969" class="clickable" onclick="showInfo(event, 'Ordinariato para los Cat&#243;licos Orientales en Espa&#241;a')">Ordinariato para los Cat&#243;licos Orientales en Espa&#241;a</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="361.8398" x="429.6504" y="1900.792" class="clickable" onclick="showInfo(event, 'Ordinariato para los Cat&#243;licos Orientales en Espa&#241;a')">Ordinariato para los Cat&#243;licos Orientales en Espa&#241;a</text>
+        <path
+            d="M369.6504,1839.6484 L379.6504,1839.6484 C394.6504,1839.6484 394.6504,1895.9453 409.6504,1895.9453 L419.6504,1895.9453 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,1839.6484 269.9307,1839.6484 L279.9307,1839.6484 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="88.7148" x="279.9307" y="2018.5391" class="clickable" onclick="showInfo(event, 'Toledo x4')">Toledo x4</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="68.7148" x="289.9307" y="2041.5342" class="clickable" onclick="showInfo(event, 'Toledo x4')">Toledo x4</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="81.3457" x="418.6455" y="1934.0938" class="clickable" onclick="showInfo(event, 'Albacete')">Albacete</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="61.3457" x="428.6455" y="1957.0889" class="clickable" onclick="showInfo(event, 'Albacete')">Albacete</text>
+        <path
+            d="M368.6455,2036.6875 L378.6455,2036.6875 C393.6455,2036.6875 393.6455,1952.2422 408.6455,1952.2422 L418.6455,1952.2422 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="104.1504" x="418.6455" y="1990.3906" class="clickable" onclick="showInfo(event, 'Ciudad Real')">Ciudad Real</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="84.1504" x="428.6455" y="2013.3857" class="clickable" onclick="showInfo(event, 'Ciudad Real')">Ciudad Real</text>
+        <path
+            d="M368.6455,2036.6875 L378.6455,2036.6875 C393.6455,2036.6875 393.6455,2008.5391 408.6455,2008.5391 L418.6455,2008.5391 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="72.4111" x="418.6455" y="2046.6875" class="clickable" onclick="showInfo(event, 'Cuenca')">Cuenca</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="52.4111" x="428.6455" y="2069.6826" class="clickable" onclick="showInfo(event, 'Cuenca')">Cuenca</text>
+        <path
+            d="M368.6455,2036.6875 L378.6455,2036.6875 C393.6455,2036.6875 393.6455,2064.8359 408.6455,2064.8359 L418.6455,2064.8359 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="174.041" x="418.6455" y="2102.9844" class="clickable" onclick="showInfo(event, 'Sig&#252;enza-Guadalajara')">Sig&#252;enza-Guadalajara</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="154.041" x="428.6455" y="2125.9795" class="clickable" onclick="showInfo(event, 'Sig&#252;enza-Guadalajara')">Sig&#252;enza-Guadalajara</text>
+        <path
+            d="M368.6455,2036.6875 L378.6455,2036.6875 C393.6455,2036.6875 393.6455,2121.1328 408.6455,2121.1328 L418.6455,2121.1328 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,2036.6875 269.9307,2036.6875 L279.9307,2036.6875 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="101.3408" x="279.9307" y="2271.875" class="clickable" onclick="showInfo(event, 'Valencia x5')">Valencia x5</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="81.3408" x="289.9307" y="2294.8701" class="clickable" onclick="showInfo(event, 'Valencia x5')">Valencia x5</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="52.833" x="431.2715" y="2159.2813" class="clickable" onclick="showInfo(event, 'Ibiza')">Ibiza</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="32.833" x="441.2715" y="2182.2764" class="clickable" onclick="showInfo(event, 'Ibiza')">Ibiza</text>
+        <path
+            d="M381.2715,2290.0234 L391.2715,2290.0234 C406.2715,2290.0234 406.2715,2177.4297 421.2715,2177.4297 L431.2715,2177.4297 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="79.0352" x="431.2715" y="2215.5781" class="clickable" onclick="showInfo(event, 'Mallorca')">Mallorca</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="59.0352" x="441.2715" y="2238.5732" class="clickable" onclick="showInfo(event, 'Mallorca')">Mallorca</text>
+        <path
+            d="M381.2715,2290.0234 L391.2715,2290.0234 C406.2715,2290.0234 406.2715,2233.7266 421.2715,2233.7266 L431.2715,2233.7266 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="80.1631" x="431.2715" y="2271.875" class="clickable" onclick="showInfo(event, 'Menorca')">Menorca</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="60.1631" x="441.2715" y="2294.8701" class="clickable" onclick="showInfo(event, 'Menorca')">Menorca</text>
+        <path
+            d="M381.2715,2290.0234 L391.2715,2290.0234 C406.2715,2290.0234 406.2715,2290.0234 421.2715,2290.0234 L431.2715,2290.0234 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="141.1533" x="431.2715" y="2328.1719" class="clickable" onclick="showInfo(event, 'Orihuela-Alicante')">Orihuela-Alicante</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="121.1533" x="441.2715" y="2351.167" class="clickable" onclick="showInfo(event, 'Orihuela-Alicante')">Orihuela-Alicante</text>
+        <path
+            d="M381.2715,2290.0234 L391.2715,2290.0234 C406.2715,2290.0234 406.2715,2346.3203 421.2715,2346.3203 L431.2715,2346.3203 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="148.2285" x="431.2715" y="2384.4688" class="clickable" onclick="showInfo(event, 'Segorbe-Castell&#243;n')">Segorbe-Castell&#243;n</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="128.2285" x="441.2715" y="2407.4639" class="clickable" onclick="showInfo(event, 'Segorbe-Castell&#243;n')">Segorbe-Castell&#243;n</text>
+        <path
+            d="M381.2715,2290.0234 L391.2715,2290.0234 C406.2715,2290.0234 406.2715,2402.6172 421.2715,2402.6172 L431.2715,2402.6172 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,2290.0234 269.9307,2290.0234 L279.9307,2290.0234 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="149.9512" x="279.9307" y="2468.9141" class="clickable" onclick="showInfo(event, 'M&#233;rida-Badajoz x2')">M&#233;rida-Badajoz x2</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="129.9512" x="289.9307" y="2491.9092" class="clickable" onclick="showInfo(event, 'M&#233;rida-Badajoz x2')">M&#233;rida-Badajoz x2</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="117.9453" x="479.8818" y="2440.7656" class="clickable" onclick="showInfo(event, 'Coria-C&#225;ceres')">Coria-C&#225;ceres</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="97.9453" x="489.8818" y="2463.7607" class="clickable" onclick="showInfo(event, 'Coria-C&#225;ceres')">Coria-C&#225;ceres</text>
+        <path
+            d="M429.8818,2487.0625 L439.8818,2487.0625 C454.8818,2487.0625 454.8818,2458.9141 469.8818,2458.9141 L479.8818,2458.9141 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="85.8574" x="479.8818" y="2497.0625" class="clickable" onclick="showInfo(event, 'Plasencia')">Plasencia</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="65.8574" x="489.8818" y="2520.0576" class="clickable" onclick="showInfo(event, 'Plasencia')">Plasencia</text>
+        <path
+            d="M429.8818,2487.0625 L439.8818,2487.0625 C454.8818,2487.0625 454.8818,2515.2109 469.8818,2515.2109 L479.8818,2515.2109 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,2487.0625 269.9307,2487.0625 L279.9307,2487.0625 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="87.6758" x="279.9307" y="2694.1016" class="clickable" onclick="showInfo(event, 'Sevilla x6')">Sevilla x6</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="67.6758" x="289.9307" y="2717.0967" class="clickable" onclick="showInfo(event, 'Sevilla x6')">Sevilla x6</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="157.4639" x="417.6064" y="2553.3594" class="clickable" onclick="showInfo(event, 'Jerez de la Frontera')">Jerez de la Frontera</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="137.4639" x="427.6064" y="2576.3545" class="clickable" onclick="showInfo(event, 'Jerez de la Frontera')">Jerez de la Frontera</text>
+        <path
+            d="M367.6064,2712.25 L377.6064,2712.25 C392.6064,2712.25 392.6064,2571.5078 407.6064,2571.5078 L417.6064,2571.5078 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="116.9951" x="417.6064" y="2609.6563" class="clickable" onclick="showInfo(event, 'Cadiz y Ceuta')">Cadiz y Ceuta</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="96.9951" x="427.6064" y="2632.6514" class="clickable" onclick="showInfo(event, 'Cadiz y Ceuta')">Cadiz y Ceuta</text>
+        <path
+            d="M367.6064,2712.25 L377.6064,2712.25 C392.6064,2712.25 392.6064,2627.8047 407.6064,2627.8047 L417.6064,2627.8047 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="79.0146" x="417.6064" y="2665.9531" class="clickable" onclick="showInfo(event, 'C&#243;rdoba')">C&#243;rdoba</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="59.0146" x="427.6064" y="2688.9482" class="clickable" onclick="showInfo(event, 'C&#243;rdoba')">C&#243;rdoba</text>
+        <path
+            d="M367.6064,2712.25 L377.6064,2712.25 C392.6064,2712.25 392.6064,2684.1016 407.6064,2684.1016 L417.6064,2684.1016 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="68.7676" x="417.6064" y="2722.25" class="clickable" onclick="showInfo(event, 'Huelva')">Huelva</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="48.7676" x="427.6064" y="2745.2451" class="clickable" onclick="showInfo(event, 'Huelva')">Huelva</text>
+        <path
+            d="M367.6064,2712.25 L377.6064,2712.25 C392.6064,2712.25 392.6064,2740.3984 407.6064,2740.3984 L417.6064,2740.3984 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="81.3252" x="417.6064" y="2778.5469" class="clickable" onclick="showInfo(event, 'Canarias')">Canarias</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="61.3252" x="427.6064" y="2801.542" class="clickable" onclick="showInfo(event, 'Canarias')">Canarias</text>
+        <path
+            d="M367.6064,2712.25 L377.6064,2712.25 C392.6064,2712.25 392.6064,2796.6953 407.6064,2796.6953 L417.6064,2796.6953 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="77.8389" x="417.6064" y="2834.8438" class="clickable" onclick="showInfo(event, 'Tenerife')">Tenerife</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="57.8389" x="427.6064" y="2857.8389" class="clickable" onclick="showInfo(event, 'Tenerife')">Tenerife</text>
+        <path
+            d="M367.6064,2712.25 L377.6064,2712.25 C392.6064,2712.25 392.6064,2852.9922 407.6064,2852.9922 L417.6064,2852.9922 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,2712.25 269.9307,2712.25 L279.9307,2712.25 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="101.7441" x="279.9307" y="3003.7344" class="clickable" onclick="showInfo(event, 'Granada x5')">Granada x5</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="81.7441" x="289.9307" y="3026.7295" class="clickable" onclick="showInfo(event, 'Granada x5')">Granada x5</text>
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="73.9424" x="431.6748" y="2891.1406" class="clickable" onclick="showInfo(event, 'Almer&#237;a')">Almer&#237;a</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="53.9424" x="441.6748" y="2914.1357" class="clickable" onclick="showInfo(event, 'Almer&#237;a')">Almer&#237;a</text>
+        <path
+            d="M381.6748,3021.8828 L391.6748,3021.8828 C406.6748,3021.8828 406.6748,2909.2891 421.6748,2909.2891 L431.6748,2909.2891 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="93.1309" x="431.6748" y="2947.4375" class="clickable" onclick="showInfo(event, 'Cartagena')">Cartagena</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="73.1309" x="441.6748" y="2970.4326" class="clickable" onclick="showInfo(event, 'Cartagena')">Cartagena</text>
+        <path
+            d="M381.6748,3021.8828 L391.6748,3021.8828 C406.6748,3021.8828 406.6748,2965.5859 421.6748,2965.5859 L431.6748,2965.5859 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="69.3623" x="431.6748" y="3003.7344" class="clickable" onclick="showInfo(event, 'Guadix')">Guadix</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="49.3623" x="441.6748" y="3026.7295" class="clickable" onclick="showInfo(event, 'Guadix')">Guadix</text>
+        <path
+            d="M381.6748,3021.8828 L391.6748,3021.8828 C406.6748,3021.8828 406.6748,3021.8828 421.6748,3021.8828 L431.6748,3021.8828 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="50.1943" x="431.6748" y="3060.0313" class="clickable" onclick="showInfo(event, 'Ja&#233;n')">Ja&#233;n</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="30.1943" x="441.6748" y="3083.0264" class="clickable" onclick="showInfo(event, 'Ja&#233;n')">Ja&#233;n</text>
+        <path
+            d="M381.6748,3021.8828 L391.6748,3021.8828 C406.6748,3021.8828 406.6748,3078.1797 421.6748,3078.1797 L431.6748,3078.1797 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#90EE90" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="70.5928" x="431.6748" y="3116.3281" class="clickable" onclick="showInfo(event, 'M&#225;laga')">M&#225;laga</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="50.5928" x="441.6748" y="3139.3232" class="clickable" onclick="showInfo(event, 'M&#225;laga')">M&#225;laga</text>
+        <path
+            d="M381.6748,3021.8828 L391.6748,3021.8828 C406.6748,3021.8828 406.6748,3134.4766 421.6748,3134.4766 L431.6748,3134.4766 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,3021.8828 269.9307,3021.8828 L279.9307,3021.8828 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+        <rect fill="#FFFF00" height="36.2969" rx="12.5" ry="12.5"
+            style="stroke:#181818;stroke-width:1.5;" width="202.6152" x="279.9307" y="3172.625" class="clickable" onclick="showInfo(event, 'Arzobispado Castrense x1')">Arzobispado Castrense x1</rect>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing"
+            textLength="182.6152" x="289.9307" y="3195.6201" class="clickable" onclick="showInfo(event, 'Arzobispado Castrense x1')">Arzobispado Castrense x1</text>
+        <path
+            d="M229.9307,1614.4609 L239.9307,1614.4609 C254.9307,1614.4609 254.9307,3190.7734 269.9307,3190.7734 L279.9307,3190.7734 "
+            fill="#FFFFFF" fill-opacity="0.00000" style="stroke:#181818;stroke-width:1;" />
+    </g>
+</svg>
