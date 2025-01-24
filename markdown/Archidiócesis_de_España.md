@@ -3,7 +3,6 @@
 En la Iglesia en España hay actualmente 69 diócesis territoriales, a las que hay que unir el Arzobispado Castrense. Cada diócesis o Iglesia particular dispone de su propia organización e instituciones diocesanas: seminario, residencias sacerdotales, colegios, etc. Además, el obispo diocesano puede erigir parroquias como comunidades de fieles constituidas de modo estable, encomendadas a un párroco. Generalmente las parroquias tienen carácter territorial.
 Las diócesis limítrofes, con el fin de promover una acción pastoral común, se agrupan en catorce Provincias Eclesiásticas bajo la dirección del Metropolitano.
 
-
 [Diócesis](https://www.conferenciaepiscopal.es/diocesis/)
 
 ![png](https://img.plantuml.biz/plantuml/png/TLMzRXin3Dxp50Aw1RXtY7reqWOn7DHkXXGPw1DxPi2J34hdDjxwA1upP2YyTjEBbPSqI8nZDu6_7ycFr5dA8BcZu3lOd9owYJHhybGE3IPA9wUdtpuy87FySUSM43916vr7LyTk4rD61ZLH6wPsdLj137Vkgc_ZM3gBmSU0FbRdA19vR34N30d7ycLFrGqzntm3Cz-InZAIOpc4iNZ03i6ZZ5MJbAEqS1HzsaiRqzXsIhm28-iyTL0jef3HZcjW38sbkQ7yp-KjypLq6uu1t8FMxSt-ri2mZYA6wX8QGwh5kmMk86Kg-t2KxXP49xepdAOWWuSOrNxgCLbvbXfifzWD3KgFh3LDj7-Al2bFnpYMWxGrVIz8JFaL8tchsiZ91X4bnsGelaghCApvDCUi06cGpTW3lzmvClN3TbnnN0csaCrE2AHqFFGRO0OVcVpOeVpQaia2wZruzoLw8MlV5igI3eB91spZrYBaBNHHZg7DGECRi2RS09UzCIxCyDtOuhbu2g1qpz5jb2YEOr8gvt9WQlGv5qBTKSRaCBYFQGFbzp6KPMHpvGTEDPYDdAyzGZ2cM_TeTuVQyWV33ggB7hnsyHvaDAx_RFJd5LcxDDFvHh6IpJ3O2ct7MbS6gecsHybbL3UCKLPOrJ0SOdwvU-ycLnvrSb1DjOZxk3CQC1oVgYxx1WMDOtVDa5xhVFSBeFBH8kIbHjaDx6Tmvxgo6QqBLOEddHw26ljigSj1V5mP6Zqwl3K3FhFAmB_4W4BFN7o3Vo5gRvsD2NSevSdC81bQD6-JCeH-MdUuF1g_qApi6VIhEKFzRb--tBy0)
