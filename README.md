@@ -14,7 +14,7 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 
 [API de la Biblia](markdown/API_de_la_Biblia.md)
 
-[Archidiócesis de España](markdown/Archidiócesis_de_España.md)
+[Archidiócesis de España](markdown/Archidiócesis_de_Espana.md)
 
 ## Nuevos pasos a dar
 
