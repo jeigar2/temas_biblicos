@@ -88,3 +88,8 @@ Repositorio para hacer diagramas de markdown y plantuml de temas bíblicos
 - Version 1.0.0:
 
 1. Diagrama de tipo mapa mental de la Archidiócesis de España
+
+- Version 1.0.1:
+
+1. Se ha creado un fichero JSON con la información de las diócesis y de cada archidiócesis
+2. Se ha creado un fichero SVG con el diagrama de la Archidiócesis de España
