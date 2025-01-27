@@ -9,8 +9,11 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Instala las dependencias de producción
-COPY requirements-prod.txt .
-RUN pip install --no-cache-dir -r requirements-prod.txt
+#COPY requirements-prod.txt .
+#RUN pip install --no-cache-dir -r requirements-prod.txt
+
+# Instala Gunicorn (para producción)
+RUN pip install --no-cache-dir gunicorn
 
 # Copia todos los archivos de la aplicación
 COPY . .
