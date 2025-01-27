@@ -18,6 +18,8 @@ RUN pip install --no-cache-dir gunicorn
 # Copia todos los archivos de la aplicación
 COPY . .
 
+ENV PYTHONPATH="${PYTHONPATH}:/app/src"
+
 # Expone el puerto en el que la aplicación Flask correrá
 EXPOSE 5000
 # Comando para ejecutar la aplicación con Flask
