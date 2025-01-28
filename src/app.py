@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import re
-from buscar_versiculos import buscar_versiculos
-from biblia_info import BibliaInfo
+from .buscar_versiculos import buscar_versiculos
+from .biblia_info import BibliaInfo
 from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
